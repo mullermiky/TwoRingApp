@@ -13,4 +13,4 @@ You can filter these data by choosing time period. There are three predefined pe
 
 ![Alt text](./screens/client.png?raw=true "screenshot web")
 
-Part of this project are several SQL files. These files contains 4 functions, 1 procedure and 1 definition of table type. These are used for obtaining data from SQL server by filter setting which comes from client.
+Another part of this project are several SQL files. These files contains 4 functions, 1 procedure and 1 definition of table type. These are used for obtaining data from SQL server by filter setting which comes from client.
