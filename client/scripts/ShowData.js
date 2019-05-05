@@ -1,5 +1,7 @@
 $(document).ready(function(){
 
+    $('.toast').toast({animation: true, autohide: true, delay: 2000});
+
     function toDatetimeLocal(date) {
     var
         date = date,
@@ -68,6 +70,12 @@ $(document).ready(function(){
             }
 
             fetch(url, param)
+                .then(function(response) {
+                    if (!response.ok) {
+                        throw Error(response.statusText);
+                    }
+                    return response;
+                })
                 .then(data=>{return data.json()})
                 .then(res=>{
                     res.map(r => {
@@ -112,9 +120,13 @@ $(document).ready(function(){
 
                     })
                     
+                })
+                .catch(function(error) {
+                    console.warn(error);
+                    document.getElementById('toastErrorBody').innerHTML = error;
+                    $('#errorToast').toast('show');
+                    
                 });
-
-
         }else{
 
         }
